@@ -4,7 +4,7 @@ const itemsDB = [
     title: 'Romantic стул',
     desc: 'Amet irure irure in nostrud consectetur esse do fugiat ipsum Lorem in occaecat in.',
     img: 'chair-1.jpg',
-    category: 'chair',
+    category: 'chairs',
     price: 49.99
   },
   {
@@ -12,7 +12,7 @@ const itemsDB = [
     title: 'Club стул',
     desc: 'Amet irure irure in nostrud consectetur esse do fugiat ipsum Lorem in occaecat in.',
     img: 'chair-2.jpg',
-    category: 'chair',
+    category: 'chairs',
     price: 49.99
   },
   {
@@ -20,7 +20,7 @@ const itemsDB = [
     title: 'Диван',
     desc: 'Amet irure irure in nostrud consectetur esse do fugiat ipsum Lorem in occaecat in.',
     img: 'sofa-1.jpg',
-    category: 'sofa',
+    category: 'sofas',
     price: 49.99
   },
   {
@@ -28,7 +28,7 @@ const itemsDB = [
     title: 'Диван',
     desc: 'Amet irure irure in nostrud consectetur esse do fugiat ipsum Lorem in occaecat in.',
     img: 'sofa-2.jpg',
-    category: 'sofa',
+    category: 'sofas',
     price: 49.99
   },
   {
@@ -36,7 +36,7 @@ const itemsDB = [
     title: 'Кухонная гарнитура',
     desc: 'Amet irure irure in nostrud consectetur esse do fugiat ipsum Lorem in occaecat in.',
     img: 'kitchen-1.jpg',
-    category: 'kitchen',
+    category: 'kitchens',
     price: 49.99
   },
   {
@@ -44,7 +44,7 @@ const itemsDB = [
     title: 'Кухонная гарнитура',
     desc: 'Amet irure irure in nostrud consectetur esse do fugiat ipsum Lorem in occaecat in.',
     img: 'kitchen-2.jpg',
-    category: 'kitchen',
+    category: 'kitchens',
     price: 49.99
   }
 ]

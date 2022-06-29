@@ -1,0 +1,24 @@
+.categories {
+  margin-bottom: 30px;
+}
+
+.category-btn {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  user-select: none;
+  cursor: pointer;
+}
+
+.category-btn:hover:not(.active-category) {
+  background: #e0e0e0;
+}
+
+.active-category {
+  transition: background .5s;
+  background: #21272F;
+  color: #fff;
+}
+

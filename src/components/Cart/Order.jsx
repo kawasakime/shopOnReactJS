@@ -1,7 +1,7 @@
 import React from "react";
 import OrderDict from "../../utils/OrderDict";
 
-const Order = ({ orders }) => {
+const Order = ({ orders, changeVisibleModal }) => {
   function totalPrice() {
     let total = 0;
     orders.map((item) => {
@@ -22,13 +22,15 @@ const Order = ({ orders }) => {
               <div>
                 {item.title} <b>x{item.count}</b>
               </div>
-              <div className="price">{(item.price * item.count).toFixed(2)} $</div>
+              <div className="price">
+                {(item.price * item.count).toFixed(2)} $
+              </div>
             </li>
           );
         })}
       </ul>
       <div className="total">{totalPrice()}</div>
-      <button className="checkoutBtn">Оформить заказ</button>
+      <button className="checkoutBtn" onClick={() => {changeVisibleModal()}}>Оформить заказ</button>
     </div>
   );
 };

@@ -1,0 +1,70 @@
+header .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  font-size: 600;
+  font-size: 20px;
+}
+
+header ul.nav {
+  list-style-type: none;
+}
+
+header ul.nav li {
+  position: relative;
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: opacity .5s;
+}
+
+header ul.nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+header ul.nav li:nth-child(1) img {
+  margin-bottom: -5px;
+}
+
+header ul.nav li:not(:nth-child(1))::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: #222;
+  transition: width .5s;
+}
+
+header ul.nav li:hover {
+  opacity: 0.6;
+}
+
+header ul.nav li:hover::after {
+  width: 100%;
+}
+
+.cart-btn {
+  padding: 10px;
+}
+
+.orders-count {
+  position: absolute;
+  background: #53b1ff;
+  font-size: 10px;
+  height: 15px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-weight: 600;
+  right: 2px;
+  top: 2px;
+}

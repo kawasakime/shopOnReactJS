@@ -1,54 +1,75 @@
 import React, { useEffect, useState } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import itemsDB from "./itemsDB";
 import ItemsList from "./components/ItemsList";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
-import { FiCheck } from "react-icons/fi";
-import ReactDOMServer from "react-dom/server";
+import { loadData, saveData } from "./service/LocalData";
+import { changeStyle } from "./service/changeStyle";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   const [items, setItems] = useState(itemsDB);
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(loadData());
+  const [visibleModal, setVisibleModal] = useState(false);
+  const [positionModal, setPositionModal] = useState(0);
+
+  function editOrdersCount() {
+    document.querySelector(".orders-count").innerHTML = orders.length;
+  }
+
+  function changeVisibleModal() {
+    setVisibleModal(!visibleModal);
+    setPositionModal(window.pageYOffset);
+    const body = document.querySelector("body");
+    !visibleModal
+      ? (body.style.overflow = "hidden")
+      : (body.style.overflow = "visible");
+  }
 
   useEffect(() => {
-    document.querySelector(".orders-count").innerHTML = orders.length;
+    editOrdersCount();
+    saveData(orders);
   });
 
-  function addToOrders(item, e = null) {
+  function addToOrders(item, element = null) {
     setOrders([...orders, item]);
-    const btn = e.target;
-    btn.innerHTML = ReactDOMServer.renderToString(<FiCheck />);
-    btn.style.fontSize = "14px";
-    btn.style.background = "#356921";
-    btn.style.color = "#fff";
-    btn.style.pointerEvents = "none";
-    setTimeout(() => {
-      btn.innerHTML = "+";
-      btn.style.fontSize = "24px";
-      btn.style.background = "#dff7a7";
-      btn.style.color = "#000";
-      btn.style.pointerEvents = "auto";
-    }, 1500);
+    changeStyle(element);
   }
 
   return (
     <>
-      <div className="wrapper">
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            exact={true}
-            element={<ItemsList items={items} addToCartFunc={addToOrders} />}
-          ></Route>
-          <Route
-            path="/cart"
-            element={<Cart orders={orders} setOrders={setOrders} />}
-          ></Route>
-        </Routes>
-      </div>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          exact={true}
+          element={
+            <ItemsList
+              items={items}
+              addToCartFunc={addToOrders}
+              visibleModal={visibleModal}
+              changeVisibleModal={changeVisibleModal}
+              positionModal={positionModal}
+              setPositionModal={setPositionModal}
+            />
+          }
+        ></Route>
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              orders={orders}
+              setOrders={setOrders}
+              visibleModal={visibleModal}
+              changeVisibleModal={changeVisibleModal}
+              positionModal={positionModal}
+            />
+          }
+        ></Route>
+        <Route path="/about" element={<AboutUs />}></Route>
+      </Routes>
       <Footer />
     </>
   );

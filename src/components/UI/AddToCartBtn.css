@@ -1,0 +1,39 @@
+.add-to-cart {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  right: 10px;
+  bottom: 15px;
+  background: #dff7a7;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 12.5px;
+  transition: width .7s ease .1s;
+  overflow: hidden;
+}
+
+.add-to-cart:hover {
+  width: 220px;
+  justify-content: flex-start;
+}
+
+.add-to-cart:hover::after {
+  left: 30px;
+}
+
+.add-to-cart::after {
+  content: 'Добавить в корзину';
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  margin-left: 3px;
+  transition: left .7s ease;
+  white-space: nowrap;
+}

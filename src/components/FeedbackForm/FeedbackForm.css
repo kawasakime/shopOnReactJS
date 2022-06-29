@@ -1,0 +1,63 @@
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+}
+
+.feedback-form>h3 {
+  margin-bottom: 30px;
+}
+
+.feedback-form label {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.feedback-form input:not(input[type='checkbox']) {
+  outline: none;
+  height: 40px;
+  width: 260px;
+  background: #F2F2F2;
+  padding: 5px;
+  font-size: 20px;
+  border: 1px solid #c6c7c9;
+  color: #333;
+}
+
+.feedback-form button {
+  height: 40px;
+  width: 260px;
+  cursor: pointer;
+  background: #21272F;
+  color: white;
+  font-weight: bold;
+  border: none;
+  transition: .5s;
+  border-radius: 5px;
+}
+
+.feedback-form button:hover {
+  opacity: .8;
+}
+
+.agree {
+  font-size: 14px;
+}
+
+.agree input {
+  margin-right: 5px;
+}
+
+.done {
+  transition: .5s;
+  background: #42a242;
+}
+
+.message {
+  opacity: 0;
+  margin-top: 20px;
+  color: #42a242;
+  font-weight: 600;
+  transition: .3s;
+}

@@ -1,0 +1,27 @@
+.contacts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts address {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-style: normal;
+}
+
+.contact-ico {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.contacts-title {
+  color: #21272F;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.map {
+  width: 100%;
+  margin-top: 30px;
+}

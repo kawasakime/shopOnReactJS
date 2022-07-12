@@ -1,0 +1,33 @@
+.personal h1 {
+  text-align: center;
+  flood-color: #333;
+  margin-bottom: 40px;
+}
+
+.personal form {
+  margin: 0 auto;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal input {
+  height: 50px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.personal button {
+  height: 50px;
+  background: #21272F;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+
+.personal button:hover {
+  opacity: .8;
+}

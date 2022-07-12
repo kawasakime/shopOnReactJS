@@ -9,9 +9,9 @@ import { loadData, saveData } from "./service/LocalData";
 import { changeStyle } from "./service/changeStyle";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Contacts from "./components/Contacts/Contacts";
+import Personal from "./components/Personal/Personal";
 
 function App() {
-  const [items, setItems] = useState(itemsDB);
   const [orders, setOrders] = useState(loadData());
   const [visibleModal, setVisibleModal] = useState(false);
   const [positionModal, setPositionModal] = useState(0);
@@ -48,7 +48,7 @@ function App() {
           exact={true}
           element={
             <ItemsList
-              items={items}
+              items={itemsDB}
               addToCartFunc={addToOrders}
               visibleModal={visibleModal}
               changeVisibleModal={changeVisibleModal}
@@ -71,6 +71,7 @@ function App() {
         ></Route>
         <Route path="/about" element={<AboutUs />}></Route>
         <Route path="/contacts" element={<Contacts/>}></Route>
+        <Route path='/login' element={<Personal/>}></Route>
       </Routes>
       <Footer />
     </>

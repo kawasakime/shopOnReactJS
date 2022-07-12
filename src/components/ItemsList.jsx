@@ -13,7 +13,7 @@ const ItemsList = ({
   positionModal,
 }) => {
   const [activeItem, setActiveItem] = useState({});
-  const [category, setCategory] = useState("chairs");
+  const [category, setCategory] = useState("all");
 
   function sortItems(items, category) {
     if (category !== "all")

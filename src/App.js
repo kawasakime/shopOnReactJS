@@ -8,6 +8,7 @@ import Cart from "./components/Cart/Cart";
 import { loadData, saveData } from "./service/LocalData";
 import { changeStyle } from "./service/changeStyle";
 import AboutUs from "./components/AboutUs/AboutUs";
+import Contacts from "./components/Contacts/Contacts";
 
 function App() {
   const [items, setItems] = useState(itemsDB);
@@ -69,6 +70,7 @@ function App() {
           }
         ></Route>
         <Route path="/about" element={<AboutUs />}></Route>
+        <Route path="/contacts" element={<Contacts/>}></Route>
       </Routes>
       <Footer />
     </>

@@ -10,6 +10,7 @@
   background-color: #f0f0f0;
   user-select: none;
   cursor: pointer;
+  transition: background .3s;
 }
 
 .category-btn:hover:not(.active-category) {
